@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eeeeee;
+}
+
+.form {
+  border: 1px solid #3e3e3e;
+  padding: 25px;
+  border-radius: 5px;
+  background-color: #6f6f6f;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.form-input {
+  margin-left: 10px;
+  padding: 10px 0px 10px 10px;
+  background: #eeeeee;
+  border: 1px solid #3e3e3e;
+  border-radius: 4px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.error-msg {
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: #f64c72;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 6px 0px;
+  border-radius: 4px;
+  border: 1px solid #3e3e3e;
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.text-opacity {
+  opacity: 0.7;
+}
+
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+}

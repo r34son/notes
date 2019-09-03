@@ -1,0 +1,85 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.add-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #e4ac45;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+.add-note:hover {
+  background-color: #cca0a0;
+}
+
+.new-note {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 20px;
+  width: 200px;
+  background-color: #e4ac45;
+  position: fixed;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
+
+.new-note-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#newtext,
+#newtitle {
+  border-radius: 4px;
+  border: 1px solid green;
+  background-color: #cccccc;
+  padding: 5px;
+  min-height: 38px;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  resize: none;
+  flex-grow: 1;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid black;
+  width: 100%;
+}
+
+.new-note-btn {
+  margin-top: 15px;
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.label {
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #3d3d3d;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 6px;
+  cursor: pointer;
+}

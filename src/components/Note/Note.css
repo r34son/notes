@@ -1,0 +1,87 @@
+.note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 200px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  margin: 25px;
+  /* overflow: hidden; */
+  flex: 1;
+}
+
+.note-title-container {
+  border-radius: 4px 4px 0px 0px;
+  display: flex;
+  background-color: #505050;
+  color: azure;
+}
+
+.title-edit,
+.text-edit {
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-edit:hover {
+  background-color: #6e6e6e;
+}
+
+.note-text-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e4ac45;
+  border-radius: 0px 0px 4px 4px;
+}
+
+#text,
+#title {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  min-height: 38px;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  resize: none;
+  flex-grow: 1;
+}
+
+#title {
+  padding-top: 10px;
+  max-height: 36px;
+  color: #c5c5c5;
+}
+
+#text:focus,
+#title:focus {
+  outline: none;
+}
+
+.text-edit:hover {
+  background-color: #c5c5c5;
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -15px;
+  left: calc(50% - 15px);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #6e6e6e;
+  cursor: pointer;
+  box-shadow: 0px 0px 6px 2px rgba(82, 62, 139, 0.75);
+  transform: scale(0.85);
+  transition: all 0.2s linear;
+}
+
+.delete:hover {
+  transform: scale(1);
+}
