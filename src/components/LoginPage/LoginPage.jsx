@@ -9,6 +9,7 @@ const LoginForm = ({ loggedIn, token, error, email, onLogin, onError }) => {
   const [password, setPassword] = useState("");
 
   const onSubmit = e => {
+    console.log(1);
     e.preventDefault();
     if (!email2) return onError("You must specify email");
     if (!password) return onError("You must enter password");
