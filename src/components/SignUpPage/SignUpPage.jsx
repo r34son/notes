@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import { signup } from "../../actions/authActions";
 import "./SignUpPage.css";
 
-const SignUpPage = ({ error, registered, onSignUp }) => {
+const SignUpPage = ({ error, onSignUp, loggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,12 +12,12 @@ const SignUpPage = ({ error, registered, onSignUp }) => {
     e.preventDefault();
     onSignUp(email, password);
   };
-  return registered ? (
-    <Redirect to="/login"></Redirect>
+  return loggedIn ? (
+    <Redirect to="/"></Redirect>
   ) : (
     <div className="container">
       <h1 className="header">Sign Up</h1>
-      <h4 className="subheader text-opacity">Create new account!</h4>
+      <h4 className="subheader text-opacity">Create a new account!</h4>
       <form className="form" onSubmit={onSubmit}>
         <div className="form-row">
           <label className="form-label" htmlFor="email">
@@ -45,7 +45,7 @@ const SignUpPage = ({ error, registered, onSignUp }) => {
             onChange={e => setPassword(e.target.value)}
           />
         </div>
-        <div className="error-msg">{error}</div>
+        {error && <div className="error-msg">{error}</div>}
         <button className="btn-submit" type="submit">
           Sign Up
         </button>
@@ -61,7 +61,7 @@ const SignUpPage = ({ error, registered, onSignUp }) => {
 const mapStateToProps = state => {
   return {
     error: state.auth.signUpError,
-    registered: state.auth.registered
+    loggedIn: state.auth.loggedIn
   };
 };
 

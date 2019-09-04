@@ -15,7 +15,7 @@ const Notes = ({ notes, isFetching, token, fetchNotes, deleteNote }) => {
       {isFetching ? (
         <Spinner />
       ) : notes.length === 0 ? (
-        <div>no notes</div>
+        <div className="no-notes">no notes</div>
       ) : (
         <div className="notes">
           {notes.map(note => (

@@ -24,9 +24,17 @@ export const signup = (email, password) => dispatch => {
   })
     .then(res => (res.ok ? res : Promise.reject(res)))
     .then((res /*тут можно сразу логинить */) =>
-      res.json().then(data => dispatch(signup_success(email)))
+      res.json().then(data => {
+        dispatch(signup_success(email));
+        dispatch(login(email, password));
+      })
     )
-    .catch(err => err.json().then(err => dispatch(signup_failure(err))));
+    .catch(err =>
+      err.json().then(err => {
+        dispatch(signup_failure(err));
+        console.log(err);
+      })
+    );
 };
 
 export const login_failure = error => {
@@ -37,6 +45,8 @@ export const login_failure = error => {
 };
 
 const login_success = (token, email) => {
+  localStorage.setItem("token", token);
+  localStorage.setItem("email", email);
   return {
     type: types.LOGIN_SUCCESS,
     token,
@@ -60,6 +70,8 @@ export const login = (email, password) => dispatch => {
 };
 
 export const logout = () => {
+  localStorage.removeItem("email");
+  localStorage.removeItem("token");
   return {
     type: types.LOG_OUT
   };

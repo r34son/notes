@@ -1,8 +1,12 @@
 import * as types from "../actions/authActionTypes";
 
+const storedToken = localStorage.getItem("token");
+const storedEmail = localStorage.getItem("email");
+
 const initialState = {
-  loggedIn: false,
-  registered: false
+  loggedIn: !!storedToken,
+  token: storedToken,
+  email: storedEmail
 };
 
 export default (state = initialState, action) => {
@@ -22,9 +26,9 @@ export default (state = initialState, action) => {
     case types.SIGNUP_SUCCESS:
       return {
         ...state,
-        registered: true,
         loggedIn: false,
-        email: action.email
+        email: action.email,
+        signUpError: null
       };
     case types.LOG_OUT:
       return {

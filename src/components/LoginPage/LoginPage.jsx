@@ -9,11 +9,11 @@ const LoginForm = ({ loggedIn, token, error, email, onLogin, onError }) => {
   const [password, setPassword] = useState("");
 
   const onSubmit = e => {
-    console.log(1);
     e.preventDefault();
     if (!email2) return onError("You must specify email");
     if (!password) return onError("You must enter password");
     onLogin(email2, password);
+    console.log(1);
   };
 
   return loggedIn ? (
@@ -21,7 +21,7 @@ const LoginForm = ({ loggedIn, token, error, email, onLogin, onError }) => {
   ) : (
     <div className="container">
       <h1 className="header">Log in</h1>
-      <form className="form" onSubmit={onSubmit}>
+      <form className="form form-login" onSubmit={onSubmit}>
         <div className="form-row">
           <label className="form-label" htmlFor="email">
             <i className="fas fa-envelope-square"></i>

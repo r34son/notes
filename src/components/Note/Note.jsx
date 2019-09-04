@@ -53,7 +53,13 @@ const Note = ({
           {!editTitle ? (
             <i className="fas fa-pencil-alt"></i>
           ) : (
-            <i className="far fa-save" onClick={e => save("title", title)}></i>
+            <i
+              className="far fa-save"
+              onClick={() => {
+                save("title", title);
+                console.log("edited");
+              }}
+            ></i>
           )}
         </label>
       </div>

@@ -27,8 +27,14 @@ const AddNote = ({ error, token, onAdd, fetchNotes }) => {
       {add && (
         <div className="modal">
           <div className="new-note">
-            <div className="close" onClick={() => setAdd(false)}>
-              <i class="far fa-times-circle"></i>
+            <div
+              className="close"
+              onClick={() => {
+                setAdd(false);
+                resetFields();
+              }}
+            >
+              <i className="far fa-times-circle"></i>
             </div>
             <form className="new-note-form" onSubmit={onSubmit}>
               <label className="label" htmlFor="newtitle">

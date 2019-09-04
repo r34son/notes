@@ -14,6 +14,10 @@
   background-color: #6f6f6f;
 }
 
+.form-login {
+  background-color: #418344;
+}
+
 .form-row {
   display: flex;
   margin-bottom: 20px;
@@ -39,6 +43,7 @@
   border-radius: 4px;
   font-size: 14px;
   line-height: 24px;
+  max-width: 200px;
 }
 
 .btn-submit {
@@ -49,6 +54,11 @@
   font-family: "Roboto";
   text-transform: uppercase;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #575757;
 }
 
 .text-opacity {
