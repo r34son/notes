@@ -77,12 +77,15 @@ const Note = ({
         <label
           className="text-edit"
           htmlFor="text"
-          onClick={() => setEditText(!editText)}
+          onClick={() => {
+            if (editText) save("text", text);
+            setEditText(!editText);
+          }}
         >
           {!editText ? (
             <i className="fas fa-pencil-alt"></i>
           ) : (
-            <i className="far fa-save" onClick={e => save("text", text)}></i>
+            <i className="far fa-save"></i>
           )}
         </label>
       </div>
